@@ -130,7 +130,7 @@ Follow the [nf-core guidelines](https://github.com/nf-core/modules#test-data) fo
 
 ### Submit module to nf-core
 
-To submit module, you need to [create a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) on the `nf-core/modules` GitHub repo.
+To submit module, you need to [create a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) from the forked GitHub repo.
 
 nf-core uses GitHub Actions provided by GitHub that automatically triggers a series of continuous integration tests. Once all the tests are successful, your module will be reviewed and approved by nf-core members as soon as possible.  
 
