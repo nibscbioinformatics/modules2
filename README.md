@@ -138,7 +138,7 @@ And you are ready to include the module in a nextflow DSL2 pipeline!
 
 ## How to add a new Module to this repository
 
-If you want to add module to this repository, instead of nf-core/modules repo, you need to create a new branch as described below.
+If you want to add module to this repository, you need to create a new branch as described below.
 
 ### Create a new branch
 
