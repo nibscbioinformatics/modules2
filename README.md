@@ -148,7 +148,7 @@ Create a new branch as shown in the picture below
 
 with the following simple steps:
 
-1. select the arrow next to the name of the current branch, and check you are on *main*
+1. select the arrow next to the name of the current branch, and check you are on *master*
 2. type the name of the new branch, using the name of the new module you want to create, lowercase
 3. click on the line composed below, which gives the option to create a new branch with the chosen name
 
