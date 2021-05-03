@@ -134,7 +134,7 @@ To submit module, you need to [create a pull request](https://help.github.com/ar
 
 GitHub Actions provided by GitHub automatically triggers a series of continuous integration tests on your pull request. Once all the tests are successful, your module will be reviewed and approved by nf-core members as soon as possible.  
 
-And you are ready to include the module in a nextflow DSL2 pipeline!
+Once approved, your module is available globally to the nextflow community to  include in a nextflow DSL2 pipeline!
 
 ## How to add a new Module to this repository
 
