@@ -132,7 +132,7 @@ Follow the [nf-core guidelines](https://github.com/nf-core/modules#test-data) fo
 
 To submit module, you need to [create a pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) from the forked GitHub repo.
 
-nf-core uses GitHub Actions provided by GitHub that automatically triggers a series of continuous integration tests. Once all the tests are successful, your module will be reviewed and approved by nf-core members as soon as possible.  
+GitHub Actions provided by GitHub automatically triggers a series of continuous integration tests on your pull request. Once all the tests are successful, your module will be reviewed and approved by nf-core members as soon as possible.  
 
 And you are ready to include the module in a nextflow DSL2 pipeline!
 
