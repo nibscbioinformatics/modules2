@@ -52,7 +52,8 @@ On HPC, change to your home directory and follow the following steps:
 4. [`Fork and clone the nf-core/modules repo locally`](https://github.com/nf-core/modules#uploading-to-nf-coremodules)
 5. Change to the cloned  modules directory
 6. Activate the nf-core conda environment
-7. If you would like the latest development version of nf-core/tools, the command is: pip install --upgrade --force-reinstall git+https://github.com/nf-core/tools.git@dev
+7. If you would like the latest development version of nf-core/tools, the command is: 
+   [`pip install --upgrade --force-reinstall git+https://github.com/nf-core/tools.git@dev`]
 8. Generate a module template, e.g. fastqc, by typing the following command in the local modules directory:
 
 ```console
