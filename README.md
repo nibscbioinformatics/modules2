@@ -52,7 +52,7 @@ On HPC, change to your home directory and follow the following steps:
 4. [`Fork and clone the nf-core/modules repo locally`](https://github.com/nf-core/modules#uploading-to-nf-coremodules)
 5. Change to the cloned  modules directory
 6. Activate the nf-core conda environment
-7. If you would like the latest development version of nf-core/tools, the command is:
+7. For the latest development version of nf-core/tools and the latest module template, type the following command in the modules directory:
  
    `pip install --upgrade --force-reinstall git+https://github.com/nf-core/tools.git@dev`
 
