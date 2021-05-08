@@ -113,7 +113,7 @@ Follow the [nf-core guidelines](https://github.com/nf-core/modules#test-data) fo
         cd /path/to/git/clone/of/nf-core/modules/
         PROFILE=docker pytest --tag fastqc_single_end --symlink --keep-workflow-wd
         ```
-    - Typical command with Singularity especially for testing locally at NIBSC):
+    - Typical command with Singularity especially for testing locally at NIBSC:
 
         ```console
         cd /path/to/git/clone/of/nf-core/modules/
