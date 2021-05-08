@@ -114,15 +114,23 @@ Follow the [nf-core guidelines](https://github.com/nf-core/modules#test-data) fo
         PROFILE=docker pytest --tag fastqc_single_end --symlink --keep-workflow-wd
         ```
 
-    - Typical command with Singularity locally:
+    - Typical command with Singularity:
+        
+         ```console
+        cd /path/to/git/clone/of/nf-core/modules/
+        TMPDIR=~ PROFILE=singularity pytest --tag fastqc_single_end --symlink --keep-workflow-wd
+        ```
+    - Typical command with Singularity (for local testing at NIBSC):
 
         ```console
         cd /path/to/git/clone/of/nf-core/modules/
         TMPDIR=~ PROFILE=/usr/bin/singularity pytest --tag fastqc_single_end --symlink --keep-workflow-wd
         ```
-        Edit modules/tests/config/nextflow.config at line 14: "$PROFILE" == "/usr/bin/singularity"
-        Edit modules/software/fastqc/main.nf at line 15: if (workflow.containerEngine == '/usr/bin/singularity' && !params.singularity_pull_docker_container) {      
-        Once the test is successful, replace '/usr/bin/singularity' with 'singularity' before making a pull request.
+        And don't forget to edit the following files:
+        1. modules/tests/config/nextflow.config at line 14: "$PROFILE" == "/usr/bin/singularity"
+        2. modules/software/moduleame/main.nf at line 15: if (workflow.containerEngine == '/usr/bin/singularity' && !params.singularity_pull_docker_container) {      
+        
+        Once the test is successful, replace '/usr/bin/singularity' with 'singularity' at all the above 3 locations before making a pull request.
 
     - Typical command with Conda:
 
