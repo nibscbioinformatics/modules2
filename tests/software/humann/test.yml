@@ -1,0 +1,12 @@
+## TODO nf-core: Please run the following command to build this file:
+#                nf-core modules create-test-yml humann
+- name: humann
+  command: nextflow run ./tests/software/humann -entry test_humann -c tests/config/nextflow.config
+  tags:
+    - humann
+  files:
+    - path: output/humann/test_genefamilies.tsv
+    - path: output/humann/test_pathabundance.tsv
+    - path: output/humann/test_pathcoverage.tsv
+    - path: output/humann/test_HUMAnN.log
+      
