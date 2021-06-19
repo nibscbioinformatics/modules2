@@ -1,30 +1,38 @@
 name: lofreq_callparallel
-## TODO nf-core: Add a description of the module and list keywords
-description: write your description here
+description: It predicts variants using multiple processors
 keywords:
-  - sort
+  - call
+  - variants
 tools:
   - lofreq:
-      ## TODO nf-core: Add a description and other details for the software below
-      description: A fast and sensitive variant-caller for inferring SNVs and indels from next-generation sequencing data
-      homepage: None
-      documentation: None
-      tool_dev_url: None
-      doi: ""
+      description: Lofreq is a fast and sensitive variant-caller for inferring SNVs and indels from next-generation sequencing data. It's call-parallel programme predicts variants using multiple processors
+      homepage: https://csb5.github.io/lofreq/
+      documentation: https://csb5.github.io/lofreq/
+      doi: "10.1093/nar/gks918"
       licence: ['MIT']
 
-## TODO nf-core: Add a description of all of the variables used as input
 input:
   - meta:
       type: map
       description: |
         Groovy Map containing sample information
-        e.g. [ id:'test', single_end:false ]
-  ## TODO nf-core: Delete / customise this example input
+        e.g. [ id:'test' ]
   - bam:
       type: file
-      description: BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: Sorted BAM file
+      pattern: "*.{bam}"
+  - bam_index:
+      type: file
+      description: BAM index file
+      pattern: "*.{bai}"
+  - fasta:
+      type: file
+      description: Reference genome FASTA file
+      pattern: "*.{fasta}"
+  - fasta_index:
+      type: file
+      description: Reference genome FASTA index file
+      pattern: "*.{fai}"
 
 ## TODO nf-core: Add a description of all of the variables used as output
 output:
@@ -37,11 +45,10 @@ output:
       type: file
       description: File containing software version
       pattern: "*.{version.txt}"
-  ## TODO nf-core: Delete / customise this example output
-  - bam:
+  - vcf:
       type: file
-      description: Sorted BAM/CRAM/SAM file
-      pattern: "*.{bam,cram,sam}"
+      description: Predicted variants file
+      pattern: "*.{vcf}"
 
 authors:
   - "@kaurravneet4123"

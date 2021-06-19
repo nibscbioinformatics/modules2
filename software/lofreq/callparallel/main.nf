@@ -20,7 +20,9 @@ process LOFREQ_CALLPARALLEL {
 
     input:
     tuple val(meta), path(bam)
+    file bam_index
     file fasta
+    file fasta_index
 
     output:
     tuple val(meta), path("*.vcf"), emit: vcf
