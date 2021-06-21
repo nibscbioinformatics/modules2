@@ -22,29 +22,34 @@ process MUSCLE {
     tuple val(meta), path(fasta)
 
     output:
-    path "*.afa" ,  optional: true, emit: align_fasta
+    path "*.afa"                  , emit: aligned_fasta
     path "*.phyi" , optional: true, emit: phyi
+    path "*.phys" , optional: true, emit: phys
     path "*.clw"  , optional: true, emit: clustalw
-    path "*.fasta", optional: true, emit: fasta
     path "*.html" , optional: true, emit: html
-    path "*.msf"  , optional: true, emit: msf_format
-    path "*.txt"  , optional: true, emit: log
+    path "*.msf"  , optional: true, emit: msf
+    path "*.txt"                  , emit: log
     path "*.version.txt"          , emit: version
 
     script:
-    def software = getSoftwareName(task.process)
-    def prefix   = options.suffix ? "${meta.id}${options.suffix}" : "${meta.id}"
+    def software    = getSoftwareName(task.process)
+    def prefix      = options.suffix ? "${meta.id}${options.suffix}" : "${meta.id}"
+    def clw_out     = options.args.contains('-clw') ? "-clwout ${prefix}_muscle_msa.clw" : ''
+    def msf_out     = options.args.contains('-msf') ? "-msfout ${prefix}_muscle_msa.msf" : ''
+    def phys_out    = options.args.contains('-phys') ? "-physout ${prefix}_muscle_msa.phys" : ''
+    def phyi_out    = options.args.contains('-phyi') ? "-phyiout ${prefix}_muscle_msa.phyi" : ''
+    def html_out    = options.args.contains('-html') ? "-htmlout ${prefix}_muscle_msa.html" : ''
     """
     muscle \\
         $options.args \\
         -in ${fasta} \\
-        -out ${prefix}_muscle_multiple_alignment.afa \\
-        -phyiout ${prefix}_muscle_multiple_alignment.phyi \\
-        -clwout ${prefix}_muscle_multiple_alignment.clw \\
-        -htmlout ${prefix}_muscle_multiple_alignment.html \\
-        -fastaout ${prefix}_muscle_multiple_alignment.fasta \\
-        -loga ${prefix}_muscle_multiple_alignment.log.txt
+        -out ${prefix}_muscle_msa.afa \\
+        $clw_out \\
+        $msf_out \\
+        $phys_out \\
+        $phyi_out \\
+        $html_out \\
+        -loga ${prefix}_muscle_msa.log.txt
     muscle -version |  sed 's/^MUSCLE v//; s/by.*\$//'  > ${software}.version.txt
     """
 }
-
